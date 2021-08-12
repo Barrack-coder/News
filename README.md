@@ -1,12 +1,16 @@
 # News
 
-
+This is a web app that enables one to list and preview news from various sources.
 
 
 
 ## Built With
 
 - Python(version3.8)
+- Flask
+- Bootsrap
+
+
 
 
 ## Getting Started
