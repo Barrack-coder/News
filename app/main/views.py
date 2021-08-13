@@ -23,4 +23,4 @@ def articles(source):
 	article = get_news_source(source)  
 	title = "News Articles"          
 
-	return render_template('articles.html',articles = articles) 
+	return render_template('articles.html',articles = article) 

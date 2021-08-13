@@ -5,12 +5,13 @@
 		<!-- Business News Section  -->
         <h3> Top Business News Sources</h3>
         <hr>
-{{articles}}
+
 {% for article in articles %}  
     <div class="row border">
+    <img src="{{article.imageurl}}">
     <h3>{{article.title}}</h3
     <p>{{article.description}}</p>
-     <a class="nav-link active" href="{{article.url}}">Read article</a>
+     <a class="btn" href="{{article.url}}">Read article</a>
     </div>
 
 
