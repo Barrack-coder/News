@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<div class="container">
+		<!-- Business News Section  -->
+        <h3> Top Business News Sources</h3>
+        <hr>
+{{articles}}
+{% for article in articles %}  
+    <div class="row border">
+    <h3>{{article.title}}</h3
+    <p>{{article.description}}</p>
+     <a class="nav-link active" href="{{article.url}}">Read article</a>
+    </div>
+
+
+ {% endfor %}    
+
+       
+	
+</div>
+
+
+{%endblock%}

@@ -1,8 +1,8 @@
 
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..requests import get_sources,get_articles
-from ..models import Sources
+from ..requests import get_news_source, get_news_sources
+
 
 #views
 @main.route('/')
@@ -10,20 +10,17 @@ def index():
 	'''
 	view root page function that returns the index the page and its data
 	'''
-	sources = get_sources('business')
-	sports_sources = get_sources('sports')      
-	technology_sources = get_sources('technology') 
-	entertainment_sources = get_sources('entertainment')     
+	sources = get_news_sources()  
 	title = "News Articles"          
 
-	return render_template('index.html',title = title, sources = sources,sports_sources = sports_sources,technology_sources = technology_sources,entertainment_sources = entertainment_sources)
+	return render_template('index.html',sources = sources)
 
-@main.route('/sources/<id>')
-def articles(id):    
+@main.route('/source/<source>')
+def articles(source):
 	'''
-	view articles page
+	view root page function that returns the index the page and its data
 	'''
-	articles = get_articles(id)
-	title = f'NH | {id}'
+	article = get_news_source(source)  
+	title = "News Articles"          
 
-	return render_template('about.html',title= title,articles = articles)      
+	return render_template('articles.html',articles = articles) 
