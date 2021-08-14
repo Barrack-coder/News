@@ -1,25 +1,23 @@
-{% extends 'base.html'%}
+{% extends 'base.html'%} {% block content%}
 
-{% block content%}
 <div class="container">
-		<!-- Business News Section  -->
-        <h3> Top Business News Sources</h3>
-        <hr>
-
-{% for article in articles %}  
-    <div class="row border">
-    <img src="{{article.imageurl}}">
-    <h3>{{article.title}}</h3
-    <p>{{article.description}}</p>
-     <a class="btn" href="{{article.url}}">Read article</a>
+    <div class="row">
+        <!-- Business News Section  -->
+        <h3> Top News highlights Sources</h3>
+        <hr> {% for article in articles %}
+        <div class="card col-md-3 m-3" style="width: 18rem;">
+            <img src="{{article.imageurl}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5>{{article.title}}</h5>
+                <p class="card-text">{{article.description}}</p>
+                <a class="btn" href="{{article.url}}">Read article</a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 
 
- {% endfor %}    
-
-       
-	
 </div>
 
 
-{%endblock%}
+{% endblock %}
